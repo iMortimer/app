@@ -1,11 +1,16 @@
+4534855181
 
+
+
+
+http://imortimer.xszz.gq/
 
 
 Guangdong Province
 Meizhou City
 Wuhua County
 
-
+https://github.com/iMortimer/app.git
 b18_18411630
 
 
@@ -38,7 +43,9 @@ HACK55
 Mavis
 BillMegan
 iMortimer
+
 YFHSHxX09l
+
 iMortimer@foxmail.com
 2491427480
 
@@ -47,9 +54,40 @@ https://openshift.redhat.com/app/console/applications
 http://imortimer.ohday.cn/
 
 
+Your Account Details
+
+Your account is now active.
+Main Hosting Details
+Control panel username
+b13_18451404
+Control panel password	**********
+Control panel URL
+cpanel.byethost13.com
+MySQL username
+b13_18451404
+MySQL password
+**********
+MySQL hostname
+sql200.byethost13.com
+FTP username
+b13_18451404
+FTP password
+**********
+FTP host name	ftp.byethost13.com
+
+
+Your Website URL's
+Home page
+http://imortimer.byethost13.com
+
+
+2053.1947.0132
+2582.2429.7234
+    .0407.1755
+
 
 iMortimer.byethost18.com
-
+imrotimer
 imortimer.byethost18.com 
 composer
 
@@ -99,6 +137,47 @@ FTP主机名	ftp.byethost18.com
 你的网站网址是 
 主页 
 http://imortimer.byethost18.com 
+
+
+Your selected Options:
+
+Software to install:WordPress 4.5.3
+Website Title:iMortimer
+Domain:imortimer.atwebpages.com
+Domain and installation path:http://imortimer.atwebpages.com/
+
+
+Administration credentials:
+
+Admin Username:imor
+Admin Password:052616
+Admin Email Address:iMortimer@foxmail.com
+
+http://imortimer.atwebpages.com/
+http://imortimer.atwebpages.com/wp-admin/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

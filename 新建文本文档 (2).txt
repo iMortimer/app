@@ -1,0 +1,113 @@
+工具：
+archlinux ISO，
+
+U盘启动制作：http://sourceforge.net/projects/usbwriter,
+
+安装：
+进入archlinux安装界面：
+-------------------------------------------------------
+Boot Arch Linux (x86_64)     [64位系统]
+Boot Arch Linux(i686)          [32位系统]
+Boou existing OS
+Run Memtest86* (RAM test)
+Hardware Informatiom (HDT)
+Reboot
+Power Off
+
+-------------------------------------------------------
+    分区：
+
+
+fdisk /dev/sda
+p(查看分区)
+n(新建分区)
+p（主分区）
+两次回车，然后输入 +512M
+其余的都给另一个分区
+w（写入）
+我这里分了两个区，一个512M，一个7.5G，你们也可以多分区几个
+    挂载：
+
+mkfs .ext4 /dev/sda2
+mkswap /dev/sda1
+swapon /dev/sda1
+mount /dev/sda2 /mnt
+分其他去挂/boot /home,方法一样
+
+    选择源：
+
+nano /etc/pacman,d/mirrorlist
+-----------------------------------------------------------------------------------------------
+##
+## Arch Linux repository mirrorlist
+## Sorted by mirror score from mirror status page
+Generated on ****-**-**
+##
+ Server = http://mirrors.163.com/archlinux/$repo/os/i686
+
+## Score:0.5 Germany
+#
+## ***************
+#
+
+----------------------------------------------------------------------------------------------
+把163源复制放在第6行
+复制一整行：Alt+6, 粘贴:Ctrl+U
+
+pacman -Syy(更新源)
+pacstrap /mnt base base-devel(安装基本系统)
+genfstab -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt(改变目录)
+ln -s /usr/share/zoneinfo/$(tzselect) /etc/localtime（时区）
+hwclock --systohc --utc（推荐）UTC时间
+hwclock --systohc --localtime(本地时间)
+echo (名)>> /etc/hostname(主机名)
+nano /etc/hosts    #将主机名写入
+    网络：
+
+
+有线连接
+systemctl start dhcpcd  #连接
+# systemctl enble dhcpcd  以自动连接
+无线连接
+pacman -S iw wpa_supplicant dialog
+wifi-menu
+ADSL 宽带连接
+pacman -S rp-pppoe
+pppoe-setup
+systemctl start adsl
+# systemctl enable adsl
+设置root密码：
+passwd root
+（密码）
+（重复密码）
+安装grub
+pacman -S grub-bios
+grub-install --recheck /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+    
+exit
+umount /mnt
+reboot
+如果是虚拟机安装，安装完成后，把存储里的目标ISO删除，就可以进入archlinux
+安装 X 窗口系统
+# pacman -S xorg-server xorg-server-utils    # 安装 Xorg Server
+# pacman -S xf86-input-synaptics    # 可选，触摸板支持
+# pacman -S ttf-dejavu wqy-microhei    # 可选，Dejavu 与文泉驿 - 微米黑字体
+安装桌面环境
+pacman -S <桌面环境组>
+官方仓库提供的桌面环境有
+Cinnamon: cinnamon
+Enlightenment: enlightenment17
+GNOME: gnome gnome-extra
+KDE: kde kde-l10n-zh_cn
+LXDE: lxde
+Xfce: xfce4 xfce4-goodies
+
+启动方式主要有两种：
+startx
+显示管理器
+
+
+友情参考：http://bbs.archlinuxcn.org/viewtopic.php?id=1037
+             ：http://tieba.baidu.com/p/2307324919

@@ -1,0 +1,5 @@
+                    <script type="text/javascript" charset="utf-8">
+                        var disqus_forum_url = 'imortimer';
+                    </script>
+                    <script type="text/javascript" src="//a.disquscdn.com/1466616618/embed/squarespace.js"></script>
+                    <script type="text/javascript" src="//imortimer.disqus.com/embed.js"></script>
